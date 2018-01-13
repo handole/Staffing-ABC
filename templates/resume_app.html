@@ -1,0 +1,33 @@
+{% extends "easy_pdf/base.html" %}
+
+{% block content %}
+  <div class="card-header">
+  	<div class="container">
+	  <div class="row">
+	  	 <div class="col-md-8">
+	  	  <h3 class="card-title">{{ instance.first_name }} {{ instance.last_name }}</h3>
+	  	  <p><i class="fa fa-fw fa-envelope"></i> {{ instance.email }}</p>
+	  	  <p><i class="fa fa-fw fa-phone"></i> {{ instance.phone }}</p>
+	  	 </div>
+	  	 <div class="col-md-4">
+		  {% if instance.photo %}
+		    <img src='{{ instance.photo.url }}' height="120" class="pull-right" />
+		  {% endif %}
+	  	 </div>
+	  </div>
+	</div>
+   </div>
+  
+
+  <div class="card-body">
+    <div class="container">
+	  <p>Birthday &nbsp &nbsp &nbsp: {{ instance.birthday }}</p>
+  	  <p>Gender &nbsp &nbsp &nbsp &nbsp: {{ instance.gender }}</p>
+  	  <p>Address &nbsp &nbsp &nbsp: {{ instance.address }}</p>
+  	  <hr>
+  	  <p>Graduates &nbsp: {{ instance.get_markdown_graduates }}</p>
+  	  <p>Experience : {{ instance.get_markdown_experience }}</p>
+  	  <p>Qualification : {{ instance.tag }}</p>
+	</div>
+  </div>
+{% endblock %}

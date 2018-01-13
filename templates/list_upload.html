@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="card mb-3">
+    <div class="card-header"> <i class="fa fa-table"></i> List Resume </div>
+      <div class="card-body">
+      	<div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Applicant</th>
+                <th>Resume</th>
+                <th>Action</th>               
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for up in upload %}
+              <tr>
+                <td>
+                    <h6>{{ up.applicant }}</h6>
+                </td>
+                <td>
+                  {% if up.resume %}
+                    <h6><a href="{{ up.resume.url }}">{{ up.resume }}</a></h6>
+                  {% endif %}
+                </td>
+                <td>
+                  <h6><a class="dropdown-item" href="/list_upload/{{ up.applicant }}/delete_applicant"><i class="fa fa-trash-o"></i> Delete</a></h6>
+                </td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock content %}

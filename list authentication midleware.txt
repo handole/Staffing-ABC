@@ -1,0 +1,35 @@
+list authentication midleware
+
+Applicant
+- add_appilcant
+- list_applicant
+- detail_applicant
+- update_applicant
+- delete_applicant
+
+Client
+- add_client
+- list_client
+- detail_client
+- update_client
+- delete_client
+
+Resume
+- create_resume
+- list_resume
+- detail_resume
+- update_resume
+- delete_resume
+- uploadresume
+- list_upload
+
+Recruiter
+- create_recruiter
+- list_recruiter
+- detail_recruiter
+- update_recruiter
+- delete_recruiter
+
+is_staff
+is_superuser
+is_authenticatead = login

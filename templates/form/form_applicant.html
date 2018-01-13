@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="card mb-3">
+    <div class="card-header"> <i class="fa fa fa-vcard-o"></i> Form Applicant </div>
+      <div class="card-body">
+      	<form method='POST' action='' enctype='multipart/form-data'>{% csrf_token %}
+          {{ form|crispy }}
+          <input type='submit' class='btn btn-primary' value='Create' />
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

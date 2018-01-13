@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+ 
+  <div class="card-header">
+  	<div class="container">
+	  <div class="row">
+	  	
+	  </div>
+	</div>
+   </div>
+  
+
+  <div class="card-body">
+    <div class="container">
+    	<h3 class="card-title">{{ instance.username }}</h3>
+	  	<p><i class="fa fa-fw fa-envelope"></i> {{ instance.email }}</p>
+	</div>
+  </div>
+  
+  <div class="card-footer">
+  	<div class="container">	  
+ 	</div>
+  </div>
+</div>
+{% endblock %}
